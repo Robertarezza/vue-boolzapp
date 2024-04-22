@@ -1,432 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
-        <!-- stile css -->
+    <!-- style css -->
     <link rel="stylesheet" href="./css/style.css">
-
+    <link rel="stylesheet" href="./css/tablet.css" media="screen and (max-width: 991px)">
+    <link rel="stylesheet" href="./css/mobile.css" media="screen and (max-width: 540px)">
+    
     <!-- VUE JS -->
-
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <title>Boolzapp</title>
 </head>
-
 <body>
 
-
-    <div class="wrapper flex">
-        <div class="cont-principale flex">
-
-            <!-- lato sinistro -->
-
-            <div class="sinistra">
-
-                <!-- header sinistra -->
-                <div class="header-sx flex">
-                    <div class="foto flex">
-                        <img src="./img/avatar_io.jpg" alt="">
-                        <h5>Sofia</h5>
-                    </div>
-                    <div class="simboli-sx">
-                        <button>
-                            <i class="fa-solid fa-circle-notch"></i>
-                        </button>
-                        <button>
-                            <i class="fa-solid fa-message"></i>
-                        </button>
-                        <button>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-                    </div>
+    <div id="app" class="container">
+        <!-- contenitore sx -->
+        <div class="left">
+            <div class="header-left">
+                <div class="header-left-logo">
+                    <img src="./img/avatar_io.jpg" alt="Mio avatar">
                 </div>
-
-                <!-- sezione notifiche -->
-                <div class="notifiche flex">
-                    <div class="togli-notifica">
-                        <i class="fa-solid fa-bell-slash"></i>
-                    </div>
-
-                    <div class="desc-notifica">
-                        <h5>Ricevi notifiche di messaggi</h5>
-                        <a href="">Attiva notifiche desktop</a>
-                    </div>
-
-                    <!-- sezione ricerca -->
-                </div>
-                <div class="ricerca flex">
-                    <button class="btn-cerca">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                    <label for="cerca"></label>
-                    <input type="text" id="cerca" placeholder="Cerca o inizia una nuova chat">
-                </div>
-                <!-- /sezione ricerca -->
-
-                <!-- sezione lista contatti -->
-                <div class="lista-contatti">
-                    <div class="contatti flex">
-
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_3.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-                        <!-- lateral text contatti -->
-                        <section class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                        </section>
-                    </div>
-
-                    <div class="contatti flex">
-
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_4.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-                        <!-- lateral text contatti -->
-                        <section class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                        </section>
-                    </div>
-
-                    <div class="contatti flex">
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_5.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-
-                        <!-- lateral text contatti -->
-                        <section class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                        </section>
-                    </div>
-
-                    <div class="contatti flex">
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_6.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-
-                        <!-- lateral text contatti -->
-                        <section class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                        </section>
-                    </div>
-
-
-                    <div class="contatti flex">
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_7.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-
-                        <!-- lateral text contatti -->
-                        <section class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                        </section>
-                    </div>
-
-                    <div class="contatti flex">
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_8.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-
-                        <!-- lateral text contatti -->
-                        <section class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                        </section>
-                    </div>
-
-                    <div class="contatti flex">
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_3.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-
-                        <!-- lateral text contatti -->
-                        <section class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                        </section>
-                    </div>
-
-                    <div class="contatti flex">
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_4.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-
-                        <!-- lateral text contatti -->
-                        <sectio class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                            </section>
-                    </div>
-
-                    <div class="contatti flex">
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_8.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-
-                        <!-- lateral text contatti -->
-                        <section class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                        </section>
-                    </div>
-
-                    <div class="contatti flex">
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_5.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-
-                        <!-- lateral text contatti -->
-                        <section class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                        </section>
-                    </div>
-
-                    <div class="contatti flex">
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_4.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-
-                        <!-- lateral text contatti -->
-                        <section class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                        </section>
-                    </div>
-
-                    <div class="contatti flex">
-                        <!-- immagine contatti -->
-                        <div class="foto">
-                            <img src="./img/avatar_3.jpg" alt="">
-                        </div>
-
-                        <!-- descrizione contatti -->
-                        <div class="desc-contatti flex">
-                            <h5>Michele</h5>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-
-                        <!-- lateral text contatti -->
-                        <section class="lateral-text flex cont-laterali">
-                            <span>16.13</span>
-                        </section>
-                    </div>
+                <div class="header-left-icons">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
             </div>
-
-
-            <div class="destra">
-                <div class="header-dx flex">
-
-                    <!-- header destra -->
-                    <div class="nome flex">
-                        <div class="foto">
-                            <img src="./img/avatar_1.jpg" alt="">
-                        </div>
-                        <!-- descrizione header destra -->
-                        <div class="descrizione">
-                            <h5>Michele</h5>
-                            <p>Ultimo accesso oggi alle 16.26</p>
-                        </div>
-
-                    </div>
-
-                    <!-- bottoni header destra -->
-                    <div class="simboli">
-                        <button>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                        <button>
-                            <i class="fa-solid fa-paperclip"></i>
-                        </button>
-                        <button>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-                    </div>
+            <div class="left-disclaimer">
+                <div class="left-disclaimer-logo">
+                    <i class="fa fa-bell-slash" aria-hidden="true"></i>
                 </div>
-
-                <!-- sezione messaggi -->
-                <div class="messaggi">
-                    <div class="testo-verde  flex">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A aspernatur repellendus odio quis,
-                            eligendi error suscipit, est ducimus possimus, modi aliquam alias laboriosam. Consequuntur
-                            voluptas, dolorem provident possimus sit aspernatur.</p>
-                        <div class="lateral-text flex">
-                            <i class="fa-solid fa-chevron-down"></i>
-                            <div class="scomparsa">
-                                <p>Info messaggio</p>
-                                <p>Camcella messaggio</p>
-                            </div>
-                            <span>16.13</span>
-                        </div>
-                    </div>
-                    <div class="testo-verde flex ">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A aspernatur repellendus odio quis,
-                            eligendi error suscipit, est ducimus possimus, modi aliquam alias laboriosam. Consequuntur
-                            voluptas, dolorem provident possimus sit aspernatur.</p>
-                        <div class="lateral-text flex">
-                            <i class="fa-solid fa-chevron-down"></i>
-                            <div class="scomparsa">
-                                <p>Info messaggio</p>
-                                <p>Camcella messaggio</p>
-                            </div>
-                            <span>16.13</span>
-                        </div>
-                    </div>
-                    <div class="testo-verde flex ">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A aspernatur repellendus odio quis,
-                            eligendi error suscipit, est ducimus possimus, modi aliquam alias laboriosam. Consequuntur
-                            voluptas, dolorem provident possimus sit aspernatur.</p>
-                        <div class="lateral-text flex">
-                            <i class="fa-solid fa-chevron-down"></i>
-                            <div class="scomparsa">
-                                <p>Info messaggio</p>
-                                <p>Camcella messaggio</p>
-                            </div>
-                            <span>16.13</span>
-                        </div>
-                    </div>
-                    <div class="testo-verde flex">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A aspernatur repellendus odio quis,
-                            eligendi error suscipit, est ducimus possimus, modi aliquam alias laboriosam. Consequuntur
-                            voluptas, dolorem provident possimus sit aspernatur.</p>
-                        <div class="lateral-text flex">
-                            <i class="fa-solid fa-chevron-down"></i>
-                            <div class="scomparsa">
-                                <p>Info messaggio</p>
-                                <p>Camcella messaggio</p>
-                            </div>
-                            <span>16.13</span>
-                        </div>
-                    </div>
-                    <div class="testo-bianco flex ">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus in ipsum voluptatem odio
-                            harum deleniti, illum dolores optio unde suscipit nemo maxime consequuntur nisi, eius
-                            excepturi consectetur assumenda repudiandae animi!</p>
-                        <div class="lateral-text flex">
-                            <i class="fa-solid fa-chevron-down"></i>
-                            <div class="scomparsa">
-                                <p>Info messaggio</p>
-                                <p>Camcella messaggio</p>
-                            </div>
-                            <span>16.13</span>
-                        </div>
-                    </div>
-                
-                    <div class="testo-verde flex">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A aspernatur repellendus odio quis,
-                            eligendi error suscipit, est ducimus possimus, modi aliquam alias laboriosam. Consequuntur
-                            voluptas, dolorem provident possimus sit aspernatur.</p>
-                        <div class="lateral-text flex">
-                            <i class="fa-solid fa-chevron-down"></i>
-                            <div class="scomparsa">
-                                <p>Info messaggio</p>
-                                <p>Camcella messaggio</p>
-                            </div>
-                            <span>16.13</span>
-                        </div>
-                    </div>
+                <div class="left-disclaimer-text">
+                    <h3>Ricevi notifiche di nuovi messaggi</h3>
+                    <a href="#">Attiva notifiche desktop</a>
                 </div>
-
-                <!-- sezione footer -->
-                <div class="footer">
-                    <div class="cont-footer flex">
-                        <button>
-                            <i class="fa-regular fa-face-smile"></i>
-                        </button>
-
-                        <label for="scrivi"></label>
-                        <input type="text" id="scrivi" placeholder="Scrivi un messaggio">
-                        
-                        <button>
-                            <i class="fa-solid fa-microphone"></i>
-                        </button>
-                    </div>
-                </div>
-
-
             </div>
-
-
+            <div class="left-searchbar">
+                <label class="search-label" for="search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </label>
+                <input id="contacts-filter" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat"
+                    name="search">
+            </div>
+            <div class="contacts" >
+                <div class="contact" v-for="curContact in contacts">
+                    <div class="contact-logo">
+                        <img :src="curContact.avatar" alt="Avatar Michele">
+                    </div>
+                    <div class="contact-info">
+                        <h3>
+                            <span class="contact-name">{{ curContact.name }}</span>
+                            <span class="time">16:15</span>
+                        </h3>
+                        <small>Lorem ipsum dolor sit amet</small>
+                    </div>
+                </div>
+                <!-- <div class="contact">
+                    <div class="contact-logo">
+                        <img src="assets/img/avatar_2.jpg" alt="Avatar Fabio">
+                    </div>
+                    <div class="contact-info">
+                        <h3>
+                            <span class="contact-name">Fabio</span>
+                            <span class="time">16:05</span>
+                        </h3>
+                        <small>Lorem ipsum dolor sit amet</small>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contact-logo">
+                        <img src="assets/img/avatar_3.jpg" alt="Avatar Samuele">
+                    </div>
+                    <div class="contact-info">
+                        <h3>
+                            <span class="contact-name">Samuele</span>
+                            <span class="time">16:03</span>
+                        </h3>
+                        <small>Lorem ipsum dolor sit amet</small>
+                    </div>
+                </div><div class="contact">
+                    <div class="contact-logo">
+                        <img src="assets/img/avatar_4.jpg" alt="Avatar Alessandro B.">
+                    </div>
+                    <div class="contact-info">
+                        <h3>
+                            <span class="contact-name">Alessandro B.</span>
+                            <span class="time">15:50</span>
+                        </h3>
+                        <small>Lorem ipsum dolor sit amet</small>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contact-logo">
+                        <img src="assets/img/avatar_5.jpg" alt="Avatar Alessandro L.">
+                    </div>
+                    <div class="contact-info">
+                        <h3>
+                            <span class="contact-name">Alessandro L.</span>
+                            <span class="time">15:45</span>
+                        </h3>
+                        <small>Lorem ipsum dolor sit amet</small>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contact-logo">
+                        <img src="assets/img/avatar_6.jpg" alt="Avatar Claudia">
+                    </div>
+                    <div class="contact-info">
+                        <h3>
+                            <span class="contact-name">Claudia</span>
+                            <span class="time">15:40</span>
+                        </h3>
+                        <small>Lorem ipsum dolor sit amet</small>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contact-logo">
+                        <img src="assets/img/avatar_7.jpg" alt="Avatar Federico">
+                    </div>
+                    <div class="contact-info">
+                        <h3>
+                            <span class="contact-name">Federico</span>
+                            <span class="time">15:22</span>
+                        </h3>
+                        <small>Lorem ipsum dolor sit amet</small>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contact-logo">
+                        <img src="assets/img/avatar_8.jpg" alt="Avatar Davide">
+                    </div>
+                    <div class="contact-info">
+                        <h3>
+                            <span class="contact-name">Davide</span>
+                            <span class="time">15:15</span>
+                        </h3>
+                        <small>Lorem ipsum dolor sit amet</small>
+                    </div>
+                </div> -->
+            </div>
         </div>
-
+        <!-- /contenitore sx -->
+        <!-- contenitore dx -->
+        <div class="right">
+            <div class="header-right">
+                <div class="header-right-logo">
+                    <img src="./img/avatar_1.jpg" alt="">
+                    <h3><span id="header-right-contact-name">Michele</span> <br>
+                        <small class="time">Ultimo accesso oggi alle 16:26</small>
+                    </h3>
+                </div>
+                <div class="header-right-icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            <div class="right-messages-container">
+                <div class="right-messages">
+                    <div class="message sent">
+                        <div class="message-inner">
+                            <span class="message-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eos blanditiis architecto expedita aspernatur quasi, et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde laboriosam doloremque?
+                            </span>
+                            <div class="message-options">
+                                <i class="fa fa-chevron-down"></i>
+                                <div class="message-options-panel">
+                                    <div class="message-info">Info messaggio</div>
+                                    <div class="message-destroy">Cancella messaggio</div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="message-time">16:13</span>
+                    </div>
+                    <div class="message received">
+                        <div class="message-inner">
+                            <span class="message-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eos blanditiis architecto expedita
+                                aspernatur quasi, et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde
+                                laboriosam doloremque?
+                            </span>
+                            <div class="message-options">
+                                <i class="fa fa-chevron-down"></i>
+                                <div class="message-options-panel">
+                                    <div class="message-info">Info messaggio</div>
+                                    <div class="message-destroy">Cancella messaggio</div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="message-time">16:15</span>
+                    </div>
+                </div>
+            </div>
+            <div class="right-footer">
+                <div class="right-footer-icon">
+                    <i class="far fa-smile"></i>
+                </div>
+                <input class="new-message-inputs" placeholder="Scrivi un messaggio">
+                <div class="right-footer-icon">
+                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <!-- /contenitore dx -->
+    </div>
 <script src="./js/script.js"></script>
 </body>
-
 </html>
