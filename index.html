@@ -50,12 +50,12 @@
             <div class="contacts">
                 <div class="contact" v-for="(contact, index) in contacts" :key="index" @click="setActiveContact(index)">
                     <div class="contact-logo">
-                        <img :src="contact.avatar" alt="Avatar Michele">
+                        <img :src="contact.avatar" :alt="contact.avatar">
                     </div>
                     <div class="contact-info">
                         <h3>
                             <span class="contact-name">{{ contact.name }}</span>
-                            <span class="time">16:15</span>
+                            <span class="time">{{contact.messages[contact.messages.length -1].date}}</span>
                         </h3>
                         <small>{{contact.messages[contact.messages.length -1].message}}</small>
                     </div>
@@ -93,7 +93,7 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="message-time"></span>
+                        <span class="message-time">{{curMessage.date}}</span>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@
                 <div class="right-footer-icon">
                     <i class="far fa-smile"></i>
                 </div>
-                <input class="new-message-inputs" placeholder="Scrivi un messaggio">
+                <input class="new-message-inputs" placeholder="Scrivi un messaggio" @keypress.enter="addMessage" v-model="newMessage.message">
                 <div class="right-footer-icon">
                     <i class="fa fa-microphone" aria-hidden="true"></i>
                 </div>
@@ -109,6 +109,8 @@
         </div>
         <!-- /contenitore dx -->
     </div>
+    <!-- luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
 <script src="./js/script.js"></script>
 </body>
 </html>
