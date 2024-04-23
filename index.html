@@ -40,15 +40,16 @@
                     <a href="#">Attiva notifiche desktop</a>
                 </div>
             </div>
-            <div class="left-searchbar">
-                <label class="search-label" for="search">
+            <div class="left-searchbar"  >
+                <label class="search-label" for="search" >
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </label>
-                <input id="contacts-filter" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat"
-                    name="search">
+                <input id="contacts-filter" type="text" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat"
+                    name="search" v-model="filterName" >
+                    {{ filterName }} 
             </div>
-            <div class="contacts">
-                <div class="contact" v-for="(contact, index) in contacts" :key="index" @click="setActiveContact(index)">
+            <div class="contacts" >
+                <div class="contact" v-for="(contact, index) in contacts"  @click="setActiveContact(index)" >
                     <div class="contact-logo">
                         <img :src="contact.avatar" :alt="contact.avatar">
                     </div>
@@ -86,10 +87,10 @@
                                {{curMessage.message}}
                             </span>
                             <div class="message-options">
-                                <i class="fa fa-chevron-down"></i>
-                                <div class="message-options-panel">
+                                <i class="fa fa-chevron-down" @click="selectedMessageIndex = index"></i>
+                                <div v-if="selectedMessageIndex === index" class="message-options-panel">
                                     <div class="message-info">Info messaggio</div>
-                                    <div class="message-destroy">Cancella messaggio</div>
+                                    <div class="message-destroy" @click="deleteMessage">Cancella messaggio</div>
                                 </div>
                             </div>
                         </div>

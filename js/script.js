@@ -12,6 +12,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            selectedMessageIndex: null,
+            filterName: "",
             newMessage: {
                 date: '',
                 message: '',
@@ -183,7 +185,6 @@ createApp({
             ]
         }
     },
-
     methods: {
         setActiveContact(index) {
             this.activeContact = index;
@@ -192,22 +193,37 @@ createApp({
             //console.log(this.contacts[this.activeContact].messages[this.activeContact].date)
 
             if (this.contacts[this.activeContact].messages && this.contacts[this.activeContact].messages.length > 0) {
-               console.log(this.contacts[this.activeContact].messages[0].date);
+                console.log(this.contacts[this.activeContact].messages[0].date);
             }
         },
         addMessage: function () {
             console.log("newMessage");
             if (this.newMessage.message !== "") {
 
-                this.newMessage.date =dt.now().toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
+                this.newMessage.date = dt.now().toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
                 this.contacts[this.activeContact].messages.push({ ...this.newMessage })
                 this.newMessage.message = "",
-                this.newMessage.status = 'sent';
+                    this.newMessage.status = 'sent';
 
                 setTimeout(() => {
                     this.contacts[this.activeContact].messages.push({ date: dt.now().toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS), message: "ok", status: 'received' });
                 }, 1000);
             }
         },
-    }
+        // filterContacts() {
+            
+        //     const filter =  this.contacts.filter(curContact =>
+        //         curContact.name.toLowerCase() === this.filterName.toLowerCase()
+        //     );
+        //     return  filter
+        // },
+
+        deleteMessage() {
+            if (this.selectedMessageIndex !== null) {
+                this.contacts[this.activeContact].messages.splice(this.selectedMessageIndex, 1);
+               
+                
+                this.selectedMessageIndex = null;
+            }
+    }}
 }).mount("#app")
