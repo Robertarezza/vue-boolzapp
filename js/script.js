@@ -198,15 +198,17 @@ createApp({
         },
         addMessage: function () {
             console.log("newMessage");
+            const activeContactIndex = this.activeContact;
             if (this.newMessage.message !== "") {
 
                 this.newMessage.date = dt.now().toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-                this.contacts[this.activeContact].messages.push({ ...this.newMessage })
+                this.contacts[activeContactIndex].messages.push({ ...this.newMessage })
                 this.newMessage.message = "",
-                    this.newMessage.status = 'sent';
+                this.newMessage.status = 'sent';
 
                 setTimeout(() => {
-                    this.contacts[this.activeContact].messages.push({ date: dt.now().toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS), message: "ok", status: 'received' });
+                    
+                    this.contacts[activeContactIndex].messages.push({ date: dt.now().toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS), message: "ok", status: 'received' });
                 }, 1000);
             }
         },

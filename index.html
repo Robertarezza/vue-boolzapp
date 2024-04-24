@@ -49,16 +49,16 @@
                    
             </div>
             <div class="contacts">
-                <div class="contact" v-for="(curContact, index) in contacts"  @click="setActiveContact(index)"  >
+                <div class="contact" v-for="(curContact, index) in contacts"  @click="setActiveContact(index)" v-show="curContact.visible" >
                     <div class="contact-logo">
                         <img :src="curContact.avatar" :alt="curContact.avatar"  >
                     </div>
                     <div class="contact-info" >
                         <h3 >
-                            <span class="contact-name" v-if="curContact.visible"  >{{ curContact.name }}</span>
-                            <span class="time">{{curContact.messages[curContact.messages.length -1].date}}</span>
+                            <span class="contact-name"   >{{ curContact.name }}</span>
+                            <span class="time" v-if="curContact.messages.length !== 0">{{curContact.messages[curContact.messages.length -1].date}}</span>
                         </h3>
-                        <small>{{curContact.messages[curContact.messages.length -1].message}}</small>
+                        <small v-if="curContact.messages.length !== 0" >{{curContact.messages[curContact.messages.length -1].message}}</small>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                 <div class="header-right-logo">
                     <img :src="contacts[activeContact].avatar" alt="">
                     <h3><span id="header-right-contact-name" >{{contacts[activeContact].name}}</span> <br>
-                        <small class="time">Ultimo accesso {{contacts[activeContact].messages[contacts[activeContact].messages.length -1].date}}</small>
+                        <small class="time" v-if="contacts[activeContact].messages.length  !== 0">Ultimo accesso {{contacts[activeContact].messages[contacts[activeContact].messages.length -1].date}}</small>
                     </h3>
                 </div>
                 <div class="header-right-icons">
