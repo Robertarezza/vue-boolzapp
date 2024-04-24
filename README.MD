@@ -12,4 +12,11 @@
 “mar” rimangono solo Marco e Martina).
 
 5. [x] Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
-- [x] Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
+- [x] Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti.
+
+## Bonus aggiuntivi:
+1. [x] evitare che l'utente possa inviare un messaggio vuoto o composto solamente da spazi
+2. [x]cambiare icona in basso a destra (a fianco all'input per scrivere un nuovo messaggio) finché l'utente sta scrivendo: 
+- di default si visualizza l'icona del microfono, quando l'input non è vuoto si visualizza l'icona dell'aeroplano. 
+- Quando il messaggio è stato inviato e l'input si svuota, si torna a visualizzare il microfono.
+3. []Inviare quindi il messaggio anche cliccando sull'icona dell'aeroplano

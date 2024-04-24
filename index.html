@@ -55,7 +55,7 @@
                     </div>
                     <div class="contact-info" >
                         <h3 >
-                            <span class="contact-name"   >{{ curContact.name }}</span>
+                            <span class="contact-name" >{{ curContact.name }}</span>
                             <span class="time" v-if="curContact.messages.length !== 0">{{curContact.messages[curContact.messages.length -1].date}}</span>
                         </h3>
                         <small v-if="curContact.messages.length !== 0" >{{curContact.messages[curContact.messages.length -1].message}}</small>
@@ -102,9 +102,11 @@
                 <div class="right-footer-icon">
                     <i class="far fa-smile"></i>
                 </div>
-                <input class="new-message-inputs" placeholder="Scrivi un messaggio" @keypress.enter="addMessage" v-model="newMessage.message">
+                <input class="new-message-inputs" placeholder="Scrivi un messaggio" @keypress.enter="addMessage" v-model.trim="newMessage.message">
                 <div class="right-footer-icon">
-                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                    
+                    <i class="fa fa-solid fa-paper-plane" v-if="newMessage.message !== ''"></i>
+                    <i class="fa fa-microphone"  v-else-if="newMessage.message == ''" ></i>
                 </div>
             </div>
         </div>

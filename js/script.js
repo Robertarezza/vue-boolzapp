@@ -227,6 +227,7 @@ createApp({
          },
 
         deleteMessage() {
+            
             if (this.selectedMessageIndex !== null) {
                 this.contacts[this.activeContact].messages.splice(this.selectedMessageIndex, 1);
                
