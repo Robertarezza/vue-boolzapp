@@ -12,6 +12,20 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            phrases : [
+                "Va bene.",
+                "Capito!",
+                "Ho ricevuto il messaggio.",
+                "Sì, sono qui.",
+                "Certamente.",
+                "In effetti!",
+                "Sono d'accordo.",
+                "Certo, nessun problema.",
+                "Interessante punto di vista.",
+                "Grazie per l'informazione.",
+                "Lo terrò presente.",
+                "Dipende."
+            ],
             selectedMessageIndex: null,
             search: "",
             newMessage: {
@@ -196,6 +210,12 @@ createApp({
                 console.log(this.contacts[this.activeContact].messages[0].date);
             }
         },
+
+        getRandomPhrase: function() {
+            return this.phrases[Math.floor(Math.random() * this.phrases.length)];
+        },
+
+        
         addMessage: function () {
             console.log("newMessage");
             const activeContactIndex = this.activeContact;
@@ -207,8 +227,9 @@ createApp({
                 this.newMessage.status = 'sent';
 
                 setTimeout(() => {
-                    
-                    this.contacts[activeContactIndex].messages.push({ date: dt.now().toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS), message: "ok", status: 'received' });
+                    this.contacts[activeContactIndex].messages.push({ 
+                        date: dt.now().toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS), message: this.getRandomPhrase(), 
+                        status: 'received' });
                 }, 1000);
             }
         },
@@ -227,7 +248,7 @@ createApp({
          },
 
         deleteMessage() {
-            
+
             if (this.selectedMessageIndex !== null) {
                 this.contacts[this.activeContact].messages.splice(this.selectedMessageIndex, 1);
                

@@ -16,7 +16,11 @@
 
 ## Bonus aggiuntivi:
 1. [x] evitare che l'utente possa inviare un messaggio vuoto o composto solamente da spazi
+
 2. [x]cambiare icona in basso a destra (a fianco all'input per scrivere un nuovo messaggio) finché l'utente sta scrivendo: 
 - di default si visualizza l'icona del microfono, quando l'input non è vuoto si visualizza l'icona dell'aeroplano. 
 - Quando il messaggio è stato inviato e l'input si svuota, si torna a visualizzare il microfono.
-3. [x]Inviare quindi il messaggio anche cliccando sull'icona dell'aeroplano
+
+3. [x]Inviare quindi il messaggio anche cliccando sull'icona dell'aeroplano.
+
+4. [x]predisporre una lista di frasi e/o citazioni da utilizzare al posto della risposta "ok:" quando il pc risponde, anziché scrivere "ok", scegliere una frase random dalla lista e utilizzarla come testo del messaggio di risposta del pc
