@@ -105,7 +105,7 @@
                 <input class="new-message-inputs" placeholder="Scrivi un messaggio" @keypress.enter="addMessage" v-model.trim="newMessage.message">
                 <div class="right-footer-icon">
                     
-                    <i class="fa fa-solid fa-paper-plane" v-if="newMessage.message !== ''"></i>
+                    <i class="fa fa-solid fa-paper-plane" v-if="newMessage.message !== ''" @click="addMessage"></i>
                     <i class="fa fa-microphone"  v-else-if="newMessage.message == ''" ></i>
                 </div>
             </div>
