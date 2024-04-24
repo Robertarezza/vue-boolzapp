@@ -233,25 +233,25 @@ createApp({
                 this.contacts[activeContactIndex].data = "sta scrivendo...";
                 console.log(this.contacts[activeContactIndex].data);
 
-                // Imposta lo stato del contatto su "online" dopo 1 secondo
+                
                 setTimeout(() => {
                     this.contacts[activeContactIndex].data = "online";
                     console.log(this.contacts[activeContactIndex].data);
                 }, 1000);
         
-                // Aggiungi la risposta del PC dopo 2 secondi
+               
                 setTimeout(() => {
                     const now = this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS);
                     const randomPhrase = this.getRandomPhrase();
         
-                    // Aggiungi il messaggio ricevuto dal PC
+                   
                     this.contacts[activeContactIndex].messages.push({
                         date: now,
                         message: randomPhrase,
                         status: 'received'
                     });
         
-                    // Imposta lo stato del contatto su "ultimo accesso alle xx:yy" dopo 2 secondi
+                   
                     setTimeout(() => {
                         this.contacts[activeContactIndex].data = `ultimo accesso alle ${now}`;
                     }, 2000);
