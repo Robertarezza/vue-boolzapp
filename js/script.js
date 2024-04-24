@@ -12,7 +12,9 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            phrases : [
+            dt: luxon.DateTime,
+            now: null, // Ora corrente
+            phrases: [
                 "Va bene.",
                 "Capito!",
                 "Ho ricevuto il messaggio.",
@@ -199,6 +201,9 @@ createApp({
             ]
         }
     },
+    mounted() {
+        this.updateNow()
+    },
     methods: {
         setActiveContact(index) {
             this.activeContact = index;
@@ -211,49 +216,75 @@ createApp({
             }
         },
 
-        getRandomPhrase: function() {
+        getRandomPhrase: function () {
             return this.phrases[Math.floor(Math.random() * this.phrases.length)];
         },
 
-        
+
         addMessage: function () {
             console.log("newMessage");
             const activeContactIndex = this.activeContact;
             if (this.newMessage.message !== "") {
 
-                this.newMessage.date = dt.now().toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
                 this.contacts[activeContactIndex].messages.push({ ...this.newMessage })
                 this.newMessage.message = "",
                 this.newMessage.status = 'sent';
 
+                this.contacts[activeContactIndex].data = "sta scrivendo...";
+                console.log(this.contacts[activeContactIndex].data);
+
+                // Imposta lo stato del contatto su "online" dopo 1 secondo
                 setTimeout(() => {
-                    this.contacts[activeContactIndex].messages.push({ 
-                        date: dt.now().toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS), message: this.getRandomPhrase(), 
-                        status: 'received' });
+                    this.contacts[activeContactIndex].data = "online";
+                    console.log(this.contacts[activeContactIndex].data);
                 }, 1000);
+        
+                // Aggiungi la risposta del PC dopo 2 secondi
+                setTimeout(() => {
+                    const now = this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS);
+                    const randomPhrase = this.getRandomPhrase();
+        
+                    // Aggiungi il messaggio ricevuto dal PC
+                    this.contacts[activeContactIndex].messages.push({
+                        date: now,
+                        message: randomPhrase,
+                        status: 'received'
+                    });
+        
+                    // Imposta lo stato del contatto su "ultimo accesso alle xx:yy" dopo 2 secondi
+                    setTimeout(() => {
+                        this.contacts[activeContactIndex].data = `ultimo accesso alle ${now}`;
+                    }, 2000);
+                }, 2000);
             }
         },
         filterContacts() {
-            
+
             this.contacts.forEach(curContact => {
                 if (curContact.name.toLowerCase().includes(this.search.toLowerCase())) {
                     console.log(curContact.name, this.search);
                     curContact.visible = true;
                 } else {
                     curContact.visible = false;
-                   
+
                 }
             });
-           
-         },
+
+        },
 
         deleteMessage() {
 
             if (this.selectedMessageIndex !== null) {
                 this.contacts[this.activeContact].messages.splice(this.selectedMessageIndex, 1);
-               
-                
+
+
                 this.selectedMessageIndex = null;
             }
-    }}
+        },
+        updateNow() {
+            this.now = this.dt.now(); // Aggiorna l'ora corrente
+            
+        }
+    },
+
 }).mount("#app")
