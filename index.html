@@ -45,20 +45,20 @@
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </label>
                 <input id="contacts-filter" type="text" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat"
-                    name="search" v-model="filterName" >
-                    {{ filterName }} 
+                    name="search" v-model="search" @keyup="filterContacts">
+                   
             </div>
-            <div class="contacts" >
-                <div class="contact" v-for="(contact, index) in contacts"  @click="setActiveContact(index)" >
+            <div class="contacts">
+                <div class="contact" v-for="(curContact, index) in contacts"  @click="setActiveContact(index)"  >
                     <div class="contact-logo">
-                        <img :src="contact.avatar" :alt="contact.avatar">
+                        <img :src="curContact.avatar" :alt="curContact.avatar"  >
                     </div>
-                    <div class="contact-info">
-                        <h3>
-                            <span class="contact-name">{{ contact.name }}</span>
-                            <span class="time">{{contact.messages[contact.messages.length -1].date}}</span>
+                    <div class="contact-info" >
+                        <h3 >
+                            <span class="contact-name" v-if="curContact.visible"  >{{ curContact.name }}</span>
+                            <span class="time">{{curContact.messages[curContact.messages.length -1].date}}</span>
                         </h3>
-                        <small>{{contact.messages[contact.messages.length -1].message}}</small>
+                        <small>{{curContact.messages[curContact.messages.length -1].message}}</small>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
             <div class="header-right">
                 <div class="header-right-logo">
                     <img :src="contacts[activeContact].avatar" alt="">
-                    <h3><span id="header-right-contact-name">{{contacts[activeContact].name}}</span> <br>
+                    <h3><span id="header-right-contact-name" >{{contacts[activeContact].name}}</span> <br>
                         <small class="time">Ultimo accesso {{contacts[activeContact].messages[contacts[activeContact].messages.length -1].date}}</small>
                     </h3>
                 </div>

@@ -13,7 +13,7 @@ createApp({
     data() {
         return {
             selectedMessageIndex: null,
-            filterName: "",
+            search: "",
             newMessage: {
                 date: '',
                 message: '',
@@ -210,13 +210,19 @@ createApp({
                 }, 1000);
             }
         },
-        // filterContacts() {
+        filterContacts() {
             
-        //     const filter =  this.contacts.filter(curContact =>
-        //         curContact.name.toLowerCase() === this.filterName.toLowerCase()
-        //     );
-        //     return  filter
-        // },
+            this.contacts.forEach(curContact => {
+                if (curContact.name.toLowerCase().includes(this.search.toLowerCase())) {
+                    console.log(curContact.name, this.search);
+                    curContact.visible = true;
+                } else {
+                    curContact.visible = false;
+                   
+                }
+            });
+           
+         },
 
         deleteMessage() {
             if (this.selectedMessageIndex !== null) {
