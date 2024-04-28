@@ -230,14 +230,18 @@ createApp({
                 this.newMessage.message = "",
                 this.newMessage.status = 'sent';
 
-                this.contacts[activeContactIndex].data = "sta scrivendo...";
+                this.contacts[activeContactIndex].data = "Online";
                 console.log(this.contacts[activeContactIndex].data);
 
-                
                 setTimeout(() => {
-                    this.contacts[activeContactIndex].data = "online";
-                    console.log(this.contacts[activeContactIndex].data);
+                    this.contacts[activeContactIndex].data = "sta scrivendo...";
+                    //console.log(this.contacts[activeContactIndex].data);
                 }, 1000);
+
+                 setTimeout(() => {
+                    this.contacts[activeContactIndex].data = "online";
+                     //console.log(this.contacts[activeContactIndex].data);
+                }, 2000);
         
                
                 setTimeout(() => {
@@ -254,8 +258,8 @@ createApp({
                    
                     setTimeout(() => {
                         this.contacts[activeContactIndex].data = `ultimo accesso alle ${now}`;
-                    }, 2000);
-                }, 2000);
+                    }, 3000);
+                }, 3000);
             }
         },
         filterContacts() {
