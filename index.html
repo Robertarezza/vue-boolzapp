@@ -58,11 +58,10 @@
                             <span class="contact-name" >{{ curContact.name }}</span>
                             <span class="time" v-if="curContact.messages.length !== 0">{{curContact.messages[curContact.messages.length -1].date}}</span>
                         </h3>
-                        <!--  -->
-                        <small class="time" v-if="curContact.data == 'online' ">
+                        <!-- <small class="time" v-if="curContact.data == 'online' ">
                             Online
-                        </small>
-                        <small class="time"v-else-if="curContact.data == 'sta scrivendo...'">
+                        </small> -->
+                        <small class="time"v-if="curContact.data == 'sta scrivendo...'">
                             ...sta scrivendo
                          </small>
                          <small  v-else-if="curContact.messages.length !== 0" >{{curContact.messages[curContact.messages.length -1].message}}</small>
@@ -116,7 +115,7 @@
                 <div class="right-footer-icon">
                     <i class="far fa-smile"></i>
                 </div>
-                <input class="new-message-inputs" placeholder="Scrivi un messaggio" @keypress.enter="addMessage" v-model.trim="newMessage.message">
+                <input class="new-message-inputs" placeholder="Scrivi un messaggio" @keyup.enter="addMessage" v-model.trim="newMessage.message">
                 <div class="right-footer-icon">
                     
                     <i class="fa fa-solid fa-paper-plane" v-if="newMessage.message !== ''" @click="addMessage"></i>

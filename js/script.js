@@ -1,11 +1,11 @@
-console.log(luxon.DateTime.now());
+//console.log(luxon.DateTime.now());
 
 
 const dt = luxon.DateTime;
 const now = dt.now(); //oggetto --> data e ora dell avvio della pagina
 
 ///formattare la data
-console.log(now.toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS));
+//console.log(now.toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS));
 
 const { createApp } = Vue;
 
@@ -224,9 +224,13 @@ createApp({
         addMessage: function () {
             console.log("newMessage");
             const activeContactIndex = this.activeContact;
+            const now = this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS);
             if (this.newMessage.message !== "") {
 
+                
                 this.contacts[activeContactIndex].messages.push({ ...this.newMessage })
+                this.newMessage.data = now,
+                console.log(this.newMessage.data);
                 this.newMessage.message = "",
                 this.newMessage.status = 'sent';
 
@@ -245,7 +249,7 @@ createApp({
         
                
                 setTimeout(() => {
-                    const now = this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS);
+                    //const now = this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS);
                     const randomPhrase = this.getRandomPhrase();
         
                    
